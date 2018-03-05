@@ -1,0 +1,45 @@
+version: "2.1"
+
+services:
+
+  mysql:
+    image: mysql
+    restart: always
+    container_name: devoxx_mysql
+    ports:
+      - "3306:3306/tcp"
+    volumes:
+      - "./dbinit.sh:/usr/local/bin/dbinit.sh"
+      - "./setup.sql:/tmp/setup.sql"
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_USER: aneo
+      MYSQL_PASSWORD: devoxx2017
+    command: dbinit.sh
+
+  arena:
+    image: devoxx/arena-api
+    depends_on:
+      mysql:
+        condition: service_started
+      leaderboard:
+        condition: service_started
+    ports:
+      - "8082:8082"
+    links:
+      - mysql
+      - leaderboard
+
+  hero:
+    image: devoxx/hero-api
+    depends_on:
+      leaderboard:
+        condition: service_started
+    ports:
+      - "8080:8080"
+
+  leaderboard:
+    image: devoxx/leaderboard-app
+    ports:
+      - "8081:8081"

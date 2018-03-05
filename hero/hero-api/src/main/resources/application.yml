@@ -3,11 +3,16 @@ aneo.security.jwt:
   issuer: aneo
 
 spring.datasource:
-  url: "jdbc:mysql://localhost/herodb"
+  url: jdbc:mysql://devoxx_mysql/herodb?useSSL=false?createDatabaseIfNotExist=true
   username: aneo
   password: devoxx2017
+  platform: mysql
+  testWhileIdle: true
+  validationQuery: SELECT 1;
+  initialize: false
 
 spring.jpa:
+  show-sql: true
   hibernate.ddl-auto: update
   database-platform: org.hibernate.dialect.MySQL5Dialect
   hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

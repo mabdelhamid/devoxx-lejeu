@@ -1,8 +1,12 @@
 databaseChangeLog:
+- preConditions:
+    - runningAs:
+      username: aneo
   - changeSet:
       id: 1
       author: eeugene
       changes:
+        - createSchema: arenadb
         - createTable:
             tableName: battle_finished
             columns:
