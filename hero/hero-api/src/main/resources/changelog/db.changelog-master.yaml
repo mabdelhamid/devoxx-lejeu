@@ -1,12 +1,8 @@
 databaseChangeLog:
-  - preConditions:
-    - runningAs:
-      username: aneo
   - changeSet:
       id: create-db
       author: mabdelhamid
       changes:
-        - createSchema: herodb
         - createTable:
             tableName: HERO
             columns:

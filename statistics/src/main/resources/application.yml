@@ -2,12 +2,12 @@ server:
   port: 8083
 
 hero.datasource:
-  url: "jdbc:mysql://devoxx_mysql:3306/herodb"
+  url: "jdbc:mysql://localhost:3306/herodb"
   username: aneo
   password: devoxx2017
 
 arena.datasource:
-  url: "jdbc:mysql://devoxx_mysql:3306/arenadb"
+  url: "jdbc:mysql://localhost:3306/arenadb"
   username: aneo
   password: devoxx2017
 

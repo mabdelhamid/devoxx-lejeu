@@ -3,7 +3,8 @@ aneo.security.jwt:
   issuer: aneo
 
 spring.datasource:
-  url: jdbc:mysql://devoxx_mysql/herodb?useSSL=false?createDatabaseIfNotExist=true
+  #url: jdbc:mysql://devoxx_mysql/herodb?useSSL=false?createDatabaseIfNotExist=true
+  url: jdbc:mysql://localhost:3306/herodb
   username: aneo
   password: devoxx2017
   platform: mysql

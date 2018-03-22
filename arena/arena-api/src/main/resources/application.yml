@@ -5,7 +5,8 @@ spring:
   application:
     name: arena
   datasource:
-    url: jdbc:mysql://devoxx_mysql:3306/arenadb?useSSL=false?createDatabaseIfNotExist=true
+    #url: jdbc:mysql://devoxx_mysql:3306/arenadb?useSSL=false?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/arenadb
     username: aneo
     password: devoxx2017
     platform: mysql
