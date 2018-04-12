@@ -1,55 +1,54 @@
-export * from './heroAction'
+export * from './heroAction';
 
 export interface IHeroState {
-    email?:string;
-    hero?: IHero;
-    quizzStats?: IHeroQuizzStats;
-    isLoggedIn?: boolean;
-    isRegistering?: boolean;
-    loginErrors?:string;
-    registerErrors?:string[];
-};
-
-export interface IHeroDto {
-    hero: IHero;
-    quizzStats: IHeroQuizzStats;
+  id?: string;
+  hero?: Hero;
+  quizzStats?: IHeroQuizzStats;
+  isLoggedIn?: boolean;
+  isRegistering?: boolean;
+  loginErrors?: string;
+  registerErrors?: string[];
 }
 
-export interface IHero {
-    email: string;
-    firstname: string;
-    lastname: string;
-    nickname: string;
-    avatarId: number;
-    attackLevel: number;
-    hpLevel: number;
-    heroStats:IHeroStats;
+export interface IHeroDto {
+  hero: Hero;
+  quizzStats: IHeroQuizzStats;
+}
+
+export interface Hero {
+  id: string;
+  email: string;
+  name: string;
+  nickname: string;
+  avatarUrl: string;
+  attackLevel: number;
+  hpLevel: number;
+  heroStats: HeroStats;
 }
 
 export interface IAvatar {
-    id:number;
-    isSelected?:boolean;
+  id: number;
+  isSelected?: boolean;
 }
 
-export interface IHeroStats {
-    wins:number;
-    losses:number;
-    currentRanking:number;
-    bestRanking:number;
-    lastFiveBattles:string;
+export interface HeroStats {
+  wins: number;
+  losses: number;
+  currentRanking: number;
+  bestRanking: number;
+  lastFiveBattles: string;
 }
 
-export interface IHeroRegistrationForm {
-    email:string;
-    password:string;
-    firstname:string;
-    lastname:string;
-    nickname:string;
-    avatarId:string;
+export interface ProfileInfo {
+  id: string;
+  email: string;
+  name: string;
+  nickname: string;
+  avatarUrl: string;
 }
 
 export interface IHeroQuizzStats {
-    totalQuizzAnswered: number;
-    totalGoodAnswered: number;
-    bonusesWined: string[];
+  totalQuizzAnswered: number;
+  totalGoodAnswered: number;
+  bonusesWined: string[];
 }

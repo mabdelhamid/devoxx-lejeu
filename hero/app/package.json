@@ -5,15 +5,18 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "api": "node server/server.js",
+    "api":
+      "json-server json-server/db.json --routes json-server/routes.json --port=8080",
     "build:dev": "webpack --progress --profile --colors",
     "build:prod": "webpack --env=prod --progress --profile --colors",
     "start": "webpack-dev-server --port 8040",
-    "lint": "tslint --config tslint.json src/**/*.ts"
+    "lint": "tslint-config-prettier-check ./tslint.json tslint.json src/**/*.ts"
   },
   "dependencies": {
+    "@types/auth0-js": "^8.11.2",
     "@types/jsdom": "^2.0.30",
     "@types/node": "^7.0.5",
+    "auth0-js": "^9.4.2",
     "core-js": "^2.4.1",
     "css-loader": "^0.26.4",
     "less": "^2.7.2",
@@ -39,11 +42,14 @@
     "json-server": "^0.9.5",
     "less-loader": "^3.0.0",
     "node-require": "0.0.10",
+    "prettier": "^1.12.0",
     "react-css-modules": "^4.1.0",
     "redux-observable": "^0.14.0",
     "ts-jest": "^19.0.0",
     "ts-loader": "^2.0.1",
     "tslint": "^4.5.1",
+    "tslint-config-prettier": "^1.10.0",
+    "tslint-react": "^3.5.1",
     "typescript": "^2.2.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.2.1",
@@ -51,18 +57,11 @@
     "webpack-merge": "^3.0.0"
   },
   "jest": {
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
+    "moduleDirectories": ["node_modules", "src"],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ]
+    "moduleFileExtensions": ["ts", "tsx", "js"]
   }
 }

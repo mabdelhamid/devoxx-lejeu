@@ -2,5 +2,6 @@
   "/api/": "/",
   "/users/current": "/userscurrent",
   "/quizz": "/quizz",
-  "/hero": "/hero"
+  "/hero": "/hero",
+  "/hero/register": "/heroregister"
 }

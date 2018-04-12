@@ -1,4 +1,10 @@
 {
+  "heroregister": {
+    "id": "google-oauth2|114606293693057010597",
+    "name": "Ahmed Regaieg",
+    "nickname": "ahmed.rgaieg",
+    "avatarUrl": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg"
+  },
   "userscurrent": {
     "login": "Player Pseudo"
   },
@@ -6,9 +12,18 @@
     "id": 1,
     "question": "Quelle est le numero du stand ANEO ?",
     "answers": [
-      {"id": 1, "text": "stand numero 1"},
-      {"id": 2, "text": "stand numero 2"},
-      {"id": 3, "text": "stand numero 41"}
+      {
+        "id": 1,
+        "text": "stand numero 1"
+      },
+      {
+        "id": 2,
+        "text": "stand numero 2"
+      },
+      {
+        "id": 3,
+        "text": "stand numero 41"
+      }
     ]
   },
   "hero": {
@@ -18,10 +33,10 @@
     "nickname": "manu"
   },
   "login": {
-    "token":"blabla"
+    "token": "blabla"
   },
   "register": {
-    "message":"success"
+    "message": "success"
   },
   "avatar": [
     {
