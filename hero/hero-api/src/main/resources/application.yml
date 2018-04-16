@@ -26,7 +26,8 @@ quizz:
   endAt: 17
   interval: 30
   intervalTimeUnit: MINUTES
-  simuMode: true # if true, the quizz runs in simulation mode, starting now, every simuModeInterval seconds
+  intervalInMinutes: 1
+  inSimuMode: true # if true, the quizz runs in simulation mode, starting now, every simuModeInterval seconds
   simuInterval: 10 # in seconds
   simuIntervalTimeUnit: SECONDS
 
