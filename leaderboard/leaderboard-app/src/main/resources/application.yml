@@ -1,0 +1,14 @@
+
+
+server:
+  port: 8081
+  context-path: /leaderboard
+
+hero-api.url: http://hero-web:8080
+
+---
+
+spring:
+  profiles: local
+
+hero-api.url: http://localhost:8080

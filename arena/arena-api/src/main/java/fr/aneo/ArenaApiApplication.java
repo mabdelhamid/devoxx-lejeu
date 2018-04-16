@@ -5,6 +5,7 @@ import fr.aneo.eventstore.EventPublisher;
 import fr.aneo.eventstore.EventStore;
 import fr.aneo.eventstore.HeroStatsView;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -17,20 +18,21 @@ import java.util.List;
 public class ArenaApiApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext run = SpringApplication.run(ArenaApiApplication.class, args);
 
-		log.info("Loading events");
-		EventStore eventStore = run.getBeanFactory().getBean(EventStore.class);
-		List<BattleFinished> events = eventStore.load();
+        ConfigurableApplicationContext run = SpringApplication.run(ArenaApiApplication.class, args);
 
-		log.info("Rehydratation of aggregates from events");
-		HeroStatsView heroStatsView= run.getBeanFactory().getBean(HeroStatsView.class);
-		heroStatsView.init(events);
+        log.info("Loading events");
+        EventStore eventStore = run.getBeanFactory().getBean(EventStore.class);
+        List<BattleFinished> events = eventStore.load();
 
-		log.info("Start ArenaScheduler");
-		ArenaScheduler arenaScheduler = run.getBeanFactory().getBean(ArenaScheduler.class);
-		arenaScheduler.start();
-	}
+        log.info("Rehydratation of aggregNates from events");
+        HeroStatsView heroStatsView= run.getBeanFactory().getBean(HeroStatsView.class);
+        heroStatsView.init(events);
+
+        log.info("Start ArenaScheduler");
+        ArenaScheduler arenaScheduler = run.getBeanFactory().getBean(ArenaScheduler.class);
+        arenaScheduler.start();
+    }
 
 	@Bean public HeroStatsView heroStatsView() { return new HeroStatsView(); }
 

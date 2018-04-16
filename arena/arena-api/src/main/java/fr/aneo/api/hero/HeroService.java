@@ -21,6 +21,8 @@ import java.util.stream.Collectors;
 @Slf4j
 public class HeroService {
 
+    private static final String AUTH_HEADER = "Authorization";
+
     private HeroApi heroApi;
     private List<Hero> heros;
     private Map<String, Object> header;
@@ -80,9 +82,11 @@ public class HeroService {
         return heros;
     }
 
-    public Map<String,Object> createAuthenticationHeader(JwtService jwtService) {
+    public Map<String, Object> createAuthenticationHeader(JwtService jwtService) {
+        log.info("creating authentication header with token : " + jwtService.getToken());
         HashMap<String, Object> headerMap = new HashMap<>();
-        headerMap.put("Authorization", "Bearer " + jwtService.getToken());
+        headerMap.put(AUTH_HEADER, "Bearer " + jwtService.getToken());
+        log.info("Authorization header : " + headerMap.get(AUTH_HEADER));
         return headerMap;
     }
 }

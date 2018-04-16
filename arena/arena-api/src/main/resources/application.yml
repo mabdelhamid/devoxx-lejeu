@@ -4,10 +4,15 @@ server:
 spring:
   application:
     name: arena
+
   datasource:
-    url: "jdbc:mysql://localhost:3306/arenadb"
+    url: jdbc:mysql://10.0.75.1:3306/arenadb
     username: aneo
     password: devoxx2017
+    platform: mysql
+    testWhileIdle: true
+    validationQuery: SELECT 1;
+    initialize: false
   jpa:
     hibernate:
       ddl-auto: update
@@ -27,6 +32,16 @@ arena:
   inSimuMode: true # if true, schedules fights every simuModeInterval seconds, if false, apply the model between startAt and endAt
   simuModeInterval: 10 # define the interval to schedules fights at
 
-leaderboardUrl: "http://localhost:8081/leaderboard"
-heroApiUrl: "http://localhost:8080"
+leaderboardUrl: "http://leaderboard-web:8081/leaderboard"
+heroApiUrl: "http://hero-web:8080"
 
+---
+
+spring:
+  profiles: local
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/arenadb
+
+leaderboardUrl: http://localhost:8081/leaderboard
+heroApiUrl: http://localhost:8080

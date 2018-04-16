@@ -16,3 +16,9 @@
 * To build application (ex arena-api)
 * execute mvn package docker:build
 * then docker run -t --name arena -p 8080:8080 arena-api
+
+
+## Compose
+* docker-compose up -d leaderboard
+* docker-compose run -e SECRET_KEY='bWFiZGVsaGFtaWQ=' hero
+* docker-compose run -e SECRET_KEY='bWFiZGVsaGFtaWQ=' arena
