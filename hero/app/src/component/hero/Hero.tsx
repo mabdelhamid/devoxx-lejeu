@@ -64,7 +64,6 @@ const component = (props: IHeroProps) => {
       <p className={'rule'}>
         Une nouvelle question est envoyée toutes les 30 minutes<br />
         Toute bonne réponse augmentera les forces de votre combattant<br />
-        Il passera la journée à affronter ses adversaires<br />
         <span className={'main-rule'}>
           Prenez de l'avance et soyez le premier à répondre aux questions
         </span>
