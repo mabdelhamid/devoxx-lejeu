@@ -14,6 +14,7 @@ interface IAppProps {
   selectedAnswer?: number;
   isAuthenticated: boolean;
   isRegistering: boolean;
+  registerError?: boolean;
 }
 
 const component = (props: IAppProps) => (
@@ -44,7 +45,14 @@ const component = (props: IAppProps) => (
             <a href="http://www.aneo.eu">aneo</a>
           </div>
         </div>
-        {props.isRegistering && <div>Chargement...</div>}
+        {!props.registerError &&
+          props.isRegistering && <div>Chargement...</div>}
+        {props.registerError && (
+          <div className={'error'}>
+            Une erreur s'est produite... raffraichissez la page ou
+            reconnectez-vous
+          </div>
+        )}
         {!props.isRegistering && (
           <div>
             <Hero />
@@ -89,6 +97,7 @@ export default connect(mapStateToProps)(component);
 function mapStateToProps(state: AppState): IAppProps {
   return {
     isAuthenticated: state.heroState.isLoggedIn,
-    isRegistering: state.heroState.isRegistering
+    isRegistering: state.heroState.isRegistering,
+    registerError: state.heroState.registerError
   };
 }

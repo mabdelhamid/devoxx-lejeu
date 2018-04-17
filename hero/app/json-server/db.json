@@ -1,30 +1,32 @@
 {
   "heroregister": {
-    "id": "google-oauth2|114606293693057010597",
+    "id": "linkedin|uozs6k6voE",
     "name": "Ahmed Regaieg",
     "nickname": "ahmed.rgaieg",
-    "avatarUrl": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg"
+    "avatarUrl": "https://media.licdn.com/dms/image/C4E03AQFydCQgXZh63A/profile-displayphoto-shrink_100_100/0?e=1529103600&v=beta&t=p58YLlRaWy9kRpEjprux6u5Ku4hyzvCSVjIvVCEsD6I"
   },
   "userscurrent": {
     "login": "Player Pseudo"
   },
   "quizz": {
-    "id": 1,
-    "question": "Quelle est le numero du stand ANEO ?",
-    "answers": [
-      {
-        "id": 1,
-        "text": "stand numero 1"
-      },
-      {
-        "id": 2,
-        "text": "stand numero 2"
-      },
-      {
-        "id": 3,
-        "text": "stand numero 41"
-      }
-    ]
+    "quizz": {
+      "id": 1,
+      "question": "Quelle est le numero du stand ANEO ?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "stand numero 1"
+        },
+        {
+          "id": 2,
+          "answer": "stand numero 2"
+        },
+        {
+          "id": 3,
+          "answer": "stand numero 41"
+        }
+      ]
+    }
   },
   "hero": {
     "email": "eeugene@aneo.fr",

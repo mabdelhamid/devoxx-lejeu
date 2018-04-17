@@ -61,6 +61,14 @@ const component = (props: IHeroProps) => {
           </span>
         </div>
       </div>
+      <p className={'rule'}>
+        Une nouvelle question est envoyée toutes les 30 minutes<br />
+        Toute bonne réponse augmentera les forces de votre combattant<br />
+        Il passera la journée à affronter ses adversaires<br />
+        <span className={'main-rule'}>
+          Prenez de l'avance et soyez le premier à répondre aux questions
+        </span>
+      </p>
       {props.hero.heroStats && (
         <div className="flex">
           <div className="item">
@@ -117,7 +125,7 @@ const component = (props: IHeroProps) => {
                     {props.quizzStats.bonusesWined.map(b => <li>{b}</li>)}
                   </ol>
                 ) : (
-                  <p>Aucun</p>
+                  <span>Aucun</span>
                 )}
               </p>
             </div>

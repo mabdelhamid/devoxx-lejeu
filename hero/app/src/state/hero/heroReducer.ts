@@ -22,7 +22,7 @@ export function heroReducer(
     case 'REGISTRATION_FAILED':
       return {
         ...state,
-        registerErrors: [action.errors]
+        registerError: true
       };
     case 'REGISTER_PROFILE':
       const { id, nickname, name, avatarUrl, email } = action.profile;

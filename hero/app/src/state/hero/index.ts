@@ -7,7 +7,7 @@ export interface IHeroState {
   isLoggedIn?: boolean;
   isRegistering?: boolean;
   loginErrors?: string;
-  registerErrors?: string[];
+  registerError?: boolean;
 }
 
 export interface IHeroDto {
@@ -24,11 +24,6 @@ export interface Hero {
   attackLevel: number;
   hpLevel: number;
   heroStats: HeroStats;
-}
-
-export interface IAvatar {
-  id: number;
-  isSelected?: boolean;
 }
 
 export interface HeroStats {

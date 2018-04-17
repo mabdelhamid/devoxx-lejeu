@@ -61,9 +61,7 @@ export function submitHeroRegistration(
             registrationDone(),
             refreshHeroStats(action.profile.id)
           ])
-          .catch(error =>
-            Observable.of(registrationFailed(error.xhr.response.errors))
-          )
+          .catch(error => Observable.of(registrationFailed()))
       );
   };
 }

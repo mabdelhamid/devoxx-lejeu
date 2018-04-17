@@ -24,11 +24,9 @@ export const registerProfile = (profile: ProfileInfo): RegisterProfile => ({
 
 export interface RegistrationFailed {
   type: 'REGISTRATION_FAILED';
-  errors: string;
 }
-export const registrationFailed = (errors: string): RegistrationFailed => ({
-  type: 'REGISTRATION_FAILED',
-  errors
+export const registrationFailed = (): RegistrationFailed => ({
+  type: 'REGISTRATION_FAILED'
 });
 
 export interface Login {
