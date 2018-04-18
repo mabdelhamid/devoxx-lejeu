@@ -26,7 +26,7 @@ const component = (props: IAppProps) => (
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/leaderboard">Leaderboard</a>
+            <a href="http://192.168.3.120:8081/">Leaderboard</a>
           </li>
           <li className="pull-right">
             <a
