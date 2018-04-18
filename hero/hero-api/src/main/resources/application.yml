@@ -22,13 +22,13 @@ liquibase:
   change-log: classpath:/changelog/db.changelog-master.yaml
 
 quizz:
-  startAt: 9
-  endAt: 17
+  startAt: 5
+  endAt: 23
   interval: 30
   intervalTimeUnit: MINUTES
-  intervalInMinutes: 1
-  inSimuMode: true # if true, the quizz runs in simulation mode, starting now, every simuModeInterval seconds
-  simuInterval: 10 # in seconds
+  intervalInMinutes: 30
+  inSimuMode: false # if true, the quizz runs in simulation mode, starting now, every simuModeInterval seconds
+  simuInterval: 60 # in seconds
   simuIntervalTimeUnit: SECONDS
 
 ---
@@ -37,4 +37,4 @@ spring:
   profiles: local
 
   datasource:
-    url: jdbc:mysql://localhost:3306/arenadb
+    url: jdbc:mysql://localhost:3306/herodb

@@ -27,8 +27,8 @@ logging:
     fr.aneo: INFO
 
 arena:
-  startAt: 9
-  endAt: 17
+  startAt: 5
+  endAt: 23
   inSimuMode: true # if true, schedules fights every simuModeInterval seconds, if false, apply the model between startAt and endAt
   simuModeInterval: 10 # define the interval to schedules fights at
 

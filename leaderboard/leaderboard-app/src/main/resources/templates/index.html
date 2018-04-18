@@ -67,7 +67,7 @@
             var html = "";
             var i = 0;
             json.list.forEach(
-                l => html += "<tr><td class='rank'>"+(++i)+"</td><td><img class='img-responsive img-circle' style='max-width:50px' src='/api/avatar/"+l.avatarId+"' /></td><td>"+l.heroName+"</td><td class='winRatio'>"+l.winRatio+"</td></tr>"
+                l => html += "<tr><td class='rank'>"+(++i)+"</td><td>"+l.heroName+"</td><td class='winRatio'>"+l.winRatio+"</td></tr>"
             )
 
             leaderboard.innerHTML = html;
